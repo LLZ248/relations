@@ -5,7 +5,7 @@ last modified on 7/10/2020 3.12pm by LLZ
 # put in your R and set here (modify here), use square brackets [] don't use {}
 set_for_R = [0, 1, 2, 3]
 # example: R = [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (2, 0), (2, 2), (2, 3)]
-R = [(0, 0) , (1, 1) , (1, 3) , (2, 2) , (2, 3) , (3, 1) , (3, 2) , (3, 3)]
+R = [(0, 0), (1, 1), (1, 3), (2, 2), (2, 3), (3, 1), (3, 2), (3, 3)]
 
 print("set =", set_for_R)
 print("R =", R)
@@ -77,11 +77,10 @@ if len(R) != 1:
             print("antisymmetric")
 
         transitive = True
-        start = 1
         end = len(R)
         transitive_loop_break = False
         for i in range(len(R)):
-            for j in range(start, end):
+            for j in range(1, end):
                 if R[i][1] == R[j][0]:
                     x, y = R[i][0], R[i][1]
                     y1, z = R[j][0], R[j][1]
@@ -90,7 +89,6 @@ if len(R) != 1:
                         print("not transitive, there are", (x, y), "and", (y1, z), "but no", (x, z))
                         transitive_loop_break = True
                         break
-            start += 1
             if transitive_loop_break:
                 break
         if transitive:

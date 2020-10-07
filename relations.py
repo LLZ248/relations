@@ -8,23 +8,22 @@ from itertools import product
 # initialize a and b (modify here)
 # use square brackets [] don't use {} for a
 # example: a = [1, 2, 3, 4]
-a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-# use () for b
-# example: b = (1, 2, 3, 4)
-b = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11)
+a = [1, 2, 3, 4]
+# example: b = [1, 2, 3, 4]
+b = [1, 2, 3, 4]
 
 
 def condition(x, y):
     # the condition (modify the condition after return)
     # example: if condition is x + y > 10, then return x + y > 10
-    return x < (3*y)
+    return x < y
 
 
-# printing original list and tuple
+# printing original lists
 print("a : " + str(a))
 print("b : " + str(b))
 
-# Construct Cartesian Product Tuple list
+# Construct Cartesian Product list
 # using itertools.product()
 res = list(product(b, a))
 # printing result
@@ -36,4 +35,3 @@ for i in res:
     if condition(x, y):
         ans.append((x, y))
 print("answer =", ans)
-
