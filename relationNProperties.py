@@ -1,11 +1,44 @@
+from itertools import product
+
+# example: a = [1, 2, 3, 4]
+a = []
+for i in range(1, 20):
+    a.append(i);
+# example: b = [1, 2, 3, 4]
+b = a
+
+
+def condition(x, y):
+    # the condition (modify the condition after return)
+    # example: if condition is x + y > 10, then return x + y > 10
+    return (4*x - y)%3 == 0
+
+
+# printing original lists
+print("a : " + str(a))
+print("b : " + str(b))
+
+# Construct Cartesian Product list
+# using itertools.product()
+res = list(product(b, a))
+# printing result
+print("The Cartesian Product is : " + str(res))
+print("")
+ans = []
+for i in res:
+    x, y = i[0], i[1]
+    if condition(x, y):
+        ans.append((x, y))
+print("answer =", ans)
+
 """
 last modified on 7/10/2020 3.12pm by LLZ
 """
 # modify set_for_R and R then run
 # put in your R and set here (modify here), use square brackets [] don't use {}
-set_for_R = [1, 3, 4, 5, 9]
+set_for_R = a
 # example: R = [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (2, 0), (2, 2), (2, 3)]
-R = [(1,3),(3,5),(1,5),(5,1),(4,9),(1,9),(3,1),(1,1),(5,5),(5,9),(3,9)]
+R = ans
 
 print("set =", set_for_R)
 print("R =", R)

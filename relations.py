@@ -3,6 +3,7 @@ last modified on 7/10/2020 3.12pm by LLZ
 """
 from itertools import product
 
+
 # modify a,b and condition then run
 
 # initialize a and b (modify here)
@@ -35,3 +36,4 @@ for i in res:
     if condition(x, y):
         ans.append((x, y))
 print("answer =", ans)
+
